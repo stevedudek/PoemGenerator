@@ -8,20 +8,32 @@
 </head>
 
 <body>
-	<h1>Poem Generator</h1>
-	<h2>Press buttons to add words</h2>
+	<h1>POEM GENERATOR</h1>
+	<h2>[Press buttons to add lines to your poem.]</h2>
 
-	<!-- Rock Paper Scissors buttons -->
-	<div id="result" align="left"><br>
+	<!-- Poem generator buttons -->
+		<div id="result" align="center"; ><br>
 		<button id="verb_but" onclick="verbPress();"><img src="verb.jpg"></button>
 		<button id="noun_but" onclick="nounPress();"><img src="noun.jpg"></button>
 		<button id="adj_but" onclick="adjPress();"><img src="adjective.jpg"></button>
 		<button id="prop_but" onclick="propPress();"><img src="propnoun.jpg"></button>
 	</div>
+	<div align="center";>
+		<p>
+		Add your own line:<input id= "customText"type="text" size=50/>
+		</p>
+	</div>
+	<div align="center">
+		<button id="submitText" onclick="addCustom()">Add</button>
+	</div>
 
 	<!-- The poem -->
 	<div id="Poem">
 		Your poem
+	</div>
+
+	<div align="center";>
+		<button id="start_new" onclick="startNew();"><img src="newpoem.jpg"></button>
 	</div>
 	
 </body>

@@ -1,6 +1,6 @@
 var poem_text = "";
-var num_clicks = 0;
 var poem_element;
+var custom_line;
 
 var random_verb = [
 	"I have eaten",
@@ -53,7 +53,8 @@ var random_prop = [
 function setup() {
   // put setup code here
   poem_element = document.getElementById("Poem");
-  var result = createCanvas(900,140);
+  custom_line = document.getElementById("customText");
+  var result = createCanvas(600,75);
   result.parent('result');
 }
 
@@ -62,16 +63,11 @@ function draw() {
   drawScreen();
 }
 
-function click_counter() {
-	num_clicks++;
-	if (num_clicks > 4) {
-		poem_text = "";
-		num_clicks = 0;
-	}
+function startNew() {
+	poem_text = "";
 }
 
 function nounPress() {
-	click_counter();
 	var new_noun_num = Math.floor(Math.random()*random_noun.length);
 	var new_noun = random_noun[new_noun_num];
 	poem_text = poem_text + new_noun + "<br />";
@@ -79,7 +75,6 @@ function nounPress() {
 }
 
 function verbPress() {
-	click_counter();
 	var new_verb_num = Math.floor(Math.random()*random_verb.length);
 	var new_verb = random_verb[new_verb_num];
 	poem_text = poem_text + new_verb + "<br />";
@@ -87,7 +82,6 @@ function verbPress() {
 }
 
 function adjPress() {
-	click_counter();
 	var new_adj_num = Math.floor(Math.random()*random_adj.length);
 	var new_adj = random_adj[new_adj_num];
 	poem_text = poem_text + new_adj + "<br />";
@@ -95,7 +89,6 @@ function adjPress() {
 }
 
 function propPress() {
-	click_counter();
 	var new_prop_num = Math.floor(Math.random()*random_prop.length);
 	var new_prop = random_prop[new_prop_num];
 	poem_text = poem_text + new_prop + "<br />";
@@ -104,4 +97,11 @@ function propPress() {
 
 function drawScreen() {
 	poem_element.innerHTML = poem_text;
+
+}
+
+function addCustom() {
+	var user_text = custom_line.value;
+	custom_line.value = "";
+	poem_text = poem_text + user_text + "<br />";
 }
