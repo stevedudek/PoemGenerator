@@ -1,5 +1,6 @@
 <head>
   <script language="javascript" src="p5.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <!-- uncomment lines below to include extra p5 libraries -->
 	<!--<script language="javascript" src="../addons/p5.dom.js"></script>-->
   <!--<script language="javascript" src="../addons/p5.sound.js"></script>-->
@@ -12,11 +13,11 @@
 	<h2>[Press buttons to add lines to your poem.]</h2>
 
 	<!-- Poem generator buttons -->
-		<div id="result" align="center"; ><br>
-		<button id="verb_but" onclick="verbPress();"><img alt="verb" src="verb.jpg"></button>
-		<button id="noun_but" onclick="nounPress();"><img alt="noun" src="noun.jpg"></button>
-		<button id="adj_but" onclick="adjPress();"><img alt="adjective" src="adjective.jpg"></button>
-		<button id="prop_but" onclick="propPress();"><img alt="proper noun"src="propnoun.jpg"></button>
+	<div id="result" align="center"; ><br>
+		<img class="butt" id="verb_but" alt="verb" src="verb.jpg">
+		<img class="butt" id="noun_but" alt="noun" src="noun.jpg">
+		<img class="butt" id="adj_but" alt="adjective" src="adjective.jpg">
+		<img class="butt" id="prop_but" alt="prop noun" src="propnoun.jpg">
 	</div>
 	<div align="center";>
 		<p>
@@ -32,8 +33,9 @@
 		Your poem
 	</div>
 
+	<!-- New poem button -->
 	<div align="center";>
-		<button id="start_new" onclick="startNew();"><img src="newpoem.jpg"></button>
+		<img id="start_new" alt="new" src="newpoem.jpg">
 	</div>
 	
 </body>

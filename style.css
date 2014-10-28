@@ -20,9 +20,19 @@ h2	{
 	font-size: 20;
 }
 
+.butt {
+	float: center;
+	width: 15%;
+}
+
+#start_new {
+	float: center;
+	width: 30%;
+}
+
 #Poem {
 	 text-align: center;
-	 padding: 50px;
+	 padding: 20px;
 	 font-family: courier;
 	 font-size: 30px;
 }

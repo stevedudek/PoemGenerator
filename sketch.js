@@ -54,8 +54,8 @@ function setup() {
   // put setup code here
   poem_element = document.getElementById("Poem");
   custom_line = document.getElementById("customText");
-  var result = createCanvas(600,75);
-  result.parent('result');
+  // var result = createCanvas(600,75);
+  // result.parent('result');
 }
 
 function draw() {
@@ -63,41 +63,38 @@ function draw() {
   drawScreen();
 }
 
-function startNew() {
-	poem_text = "";
-}
-
-function nounPress() {
-	var new_noun_num = Math.floor(Math.random()*random_noun.length);
-	var new_noun = random_noun[new_noun_num];
-	poem_text = poem_text + new_noun + "<br />";
-	
-}
-
-function verbPress() {
-	var new_verb_num = Math.floor(Math.random()*random_verb.length);
+$(document).ready(function(){
+  $("#verb_but").click(function(){
+    var new_verb_num = Math.floor(Math.random()*random_verb.length);
 	var new_verb = random_verb[new_verb_num];
 	poem_text = poem_text + new_verb + "<br />";
-	
-}
+  });
 
-function adjPress() {
-	var new_adj_num = Math.floor(Math.random()*random_adj.length);
+  $("#noun_but").click(function(){
+  	var new_noun_num = Math.floor(Math.random()*random_noun.length);
+	var new_noun = random_noun[new_noun_num];
+	poem_text = poem_text + new_noun + "<br />";
+	});
+
+  $("#adj_but").click(function(){
+  	var new_adj_num = Math.floor(Math.random()*random_adj.length);
 	var new_adj = random_adj[new_adj_num];
 	poem_text = poem_text + new_adj + "<br />";
-	
-}
+	});
 
-function propPress() {
-	var new_prop_num = Math.floor(Math.random()*random_prop.length);
+  $("#prop_but").click(function(){
+  	var new_prop_num = Math.floor(Math.random()*random_prop.length);
 	var new_prop = random_prop[new_prop_num];
 	poem_text = poem_text + new_prop + "<br />";
-	
-}
+	});
+
+  $("#start_new").click(function(){
+  	poem_text = "";
+  });
+});
 
 function drawScreen() {
 	poem_element.innerHTML = poem_text;
-
 }
 
 function addCustom() {
